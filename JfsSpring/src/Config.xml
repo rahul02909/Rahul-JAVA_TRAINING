@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="b1" class="MySpEL.Book1">
+    <property name="book1Id" value="2000"></property>
+    <property name="bookname" value="JAVA"></property>
+    </bean>
+    <bean id="b2" class="MySpEL.Book2">
+    <property name="book2Id" value="#{b1.book1Id +200}"></property>
+    <property name="bookname" value="#{b1.bookname}"></property>
+    </bean>
+
+</beans>
